@@ -156,6 +156,10 @@ class PlayState extends MusicBeatState
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
 	
+	var credits:String;
+	var creditsTextReal:Bool = false;
+	var creditsText:Bool = false;
+	
 	public var sicks:Int = 0;
 	public var goods:Int = 0;
 	public var bads:Int = 0;
@@ -1646,7 +1650,7 @@ class PlayState extends MusicBeatState
 						});
 						FlxG.sound.play(Paths.sound('introGo' + introSoundsSuffix), 0.6);
 					case 4:
-						if (creditsText & creditsTextReal = false)
+						if (creditsText && creditsTextReal = false)
 						{
 				 			creditsTextReal = true;
 							var creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
@@ -2377,9 +2381,9 @@ class PlayState extends MusicBeatState
 		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
 		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
 
-		var credits:String;
-		var creditsTextReal:Bool = false;
-		switch (dad.curCharacter)
+		//var credits:String;
+		//var creditsTextReal:Bool = false;
+		/*switch (dad.curCharacter)
 		{
 			case 'bambi-unfair' | 'unfair-junker':
 				credits = "Ghost tapping is forced off! Screw you!";
@@ -2403,7 +2407,7 @@ class PlayState extends MusicBeatState
 				credits = 'You know you are not allowed to port these, right?';
 			default:
 				credits = '';
-		};
+		};*/
 		var creditsText:Bool = credits != '';
 		var textYPos:Float = healthBarBG.y + 50;
 		if (creditsText)
