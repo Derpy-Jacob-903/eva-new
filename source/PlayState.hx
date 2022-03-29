@@ -2368,6 +2368,41 @@ class PlayState extends MusicBeatState
 		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
 		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
 
+		var credits:String;
+		var creditsTextReal:Bool = false
+		switch (SONG.player2)
+		{
+			case 'bambi-unfair' | 'unfair-junker':
+				credits = "Ghost tapping is forced off! Screw you!";
+			case 'cheating' | 'bambi-piss-3d':
+				credits = 'Screw you!';
+			case 'tmp':
+				credits = 'OC created by [owner]!';
+			case 'ringi':
+				credits = 'OC created by Dragolii!';
+			case 'bambom':
+				credits = 'OC created by Emiko!';
+			case 'bendu':
+				credits = 'OC created by DanWiki!';
+			case 'expunged':
+				credits = "Fuck you. You're done.";
+			case 'bandu-fur' | 'bandu' | 'bandu-candy' | 'badai' | 'bandu-origin' | 'bandu-scaredy':
+				credits = 'OC created by Lancey!';
+			case 'speedy' | 'speedy-poly' | 'speedy-wire':
+				credits = 'OC created by EV-Zero!';
+			case '3d-bf' | 'sart-producer-night' | 'sart-producer' | 'playrobot' | 'playrobot-crazy' | 'hall-monitor' | 'diamond-man' | 'dave-wheels' | 'gf-wheels'
+				| 'split-dave-3d' | 'RECOVERED_PROJECT' | 'RECOVERED_PROJECT_2' | 'RECOVERED_PROJECT_3' | 'tunnel-dave' | 'og-dave' | 'og-dave-angey' | 'garrett' | 'tunnel-bf' | 'tunnel-bf-flipped':
+				credits = 'You know you are not allowed to port these, right?';
+			default:
+				credits = '';
+		}
+		var creditsText:Bool = credits != '';
+		var textYPos:Float = healthBarBG.y + 50;
+		if (creditsText)
+		{
+			textYPos = healthBarBG.y + 30;
+		}
+				
 		if (health > 2)
 			health = 2;
 
@@ -2394,7 +2429,18 @@ class PlayState extends MusicBeatState
 			{
 				Conductor.songPosition += FlxG.elapsed * 1000;
 				if (Conductor.songPosition >= 0)
+				{
 					startSong();
+				}
+				if (creditsText & creditsTextReal = false)
+				{
+				    	creditsTextReal = true
+					var creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
+					creditsWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+					creditsWatermark.scrollFactor.set();
+					add(creditsWatermark);
+					creditsWatermark.cameras = [camHUD];
+				}
 			}
 		}
 		else
