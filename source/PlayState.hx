@@ -2369,7 +2369,7 @@ class PlayState extends MusicBeatState
 		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
 
 		var credits:String;
-		var creditsTextReal:Bool = false
+		var creditsTextReal:Bool = false;
 		switch (SONG.player2)
 		{
 			case 'bambi-unfair' | 'unfair-junker':
