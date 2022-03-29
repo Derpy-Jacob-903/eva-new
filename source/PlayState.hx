@@ -2390,8 +2390,7 @@ class PlayState extends MusicBeatState
 				credits = 'OC created by Lancey!';
 			case 'speedy' | 'speedy-poly' | 'speedy-wire':
 				credits = 'OC created by EV-Zero!';
-			case '3d-bf' | 'sart-producer-night' | 'sart-producer' | 'playrobot' | 'playrobot-crazy' | 'hall-monitor' | 'diamond-man' | 'dave-wheels' | 'gf-wheels'
-				| 'split-dave-3d' | 'RECOVERED_PROJECT' | 'RECOVERED_PROJECT_2' | 'RECOVERED_PROJECT_3' | 'tunnel-dave' | 'og-dave' | 'og-dave-angey' | 'garrett' | 'tunnel-bf' | 'tunnel-bf-flipped':
+			case '3d-bf' | 'sart-producer-night' | 'sart-producer' | 'playrobot' | 'playrobot-crazy' | 'hall-monitor' | 'diamond-man' | 'dave-wheels' | 'gf-wheels' | 'split-dave-3d' | 'RECOVERED_PROJECT' | 'RECOVERED_PROJECT_2' | 'RECOVERED_PROJECT_3' | 'tunnel-dave' | 'og-dave' | 'og-dave-angey' | 'garrett' | 'tunnel-bf' | 'tunnel-bf-flipped':
 				credits = 'You know you are not allowed to port these, right?';
 			default:
 				credits = '';
