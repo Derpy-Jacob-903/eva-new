@@ -1648,7 +1648,7 @@ class PlayState extends MusicBeatState
 					case 4:
 						if (creditsText & creditsTextReal = false)
 						{
-				 			creditsTextReal = true
+				 			creditsTextReal = true;
 							var creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
 							creditsWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 							creditsWatermark.scrollFactor.set();
